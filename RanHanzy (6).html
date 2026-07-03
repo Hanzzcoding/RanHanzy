@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Kultivasi</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('https://i.postimg.cc/TYv2btK1/IMG-20260702-WA0012.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .box {
+            /* Warna hitam transparan tanpa efek blur */
+            background: rgba(0, 0, 0, 0.5); 
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            /* Garis dihilangkan */
+            border: none; 
+            width: 300px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #fbbf24;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #hasil { margin-top: 20px; font-weight: bold; color: #fbbf24; }
+        .wm { margin-top: 20px; font-size: 0.8rem; color: rgba(255, 255, 255, 0.5); }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Cek Kultivasi</h2>
+    <input type="text" id="nama" placeholder="Masukkan nama...">
+    <button onclick="cek()">Cek Kultivasi</button>
+    <div id="hasil"></div>
+    <div class="wm">Hanzz Coding</div>
+</div>
+
+<script>
+    const daftar = [
+        "Qi Condensation", "Foundation Establishment", "Core Formation", 
+        "Nascent Soul", "Soul Formation", "Soul Transformation", 
+        "Ascendant", "Illusory Yin", "Corporeal Yang", 
+        "Nirvana Scryer", "Nirvana Cleanser", "Nirvana Shatterer", 
+        "Heaven's Blight", "Nirvana Void", "Spirit Void", 
+        "Arcane Void", "Void Tribulant", "Heaven Trampling"
+    ];
+
+    function cek() {
+        const nama = document.getElementById('nama').value;
+        if (!nama) return alert("Masukkan nama dulu!");
+        const hasil = daftar[Math.floor(Math.random() * daftar.length)];
+        document.getElementById('hasil').innerText = `Kultivator ${nama}, tingkat kultivasi Anda: ${hasil}`;
+    }
+</script>
+
+</body>
+</html>
